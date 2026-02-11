@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcul d'Hypoténuse</title>
+    <style>
+body { 
+    font-family: sans-serif; 
+    max-width: 500px; 
+    margin: 40px auto; 
+    padding: 20px; 
+    text-align: center; 
+    /* Effet miroir/brillance sur l'image de fond */
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('gera.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 1); /* Halo de lumière blanche */
+}
+input { padding: 12px; margin: 10px; width: 85%; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+.resultat { font-size: 1.8em; color: #1a1a1a; margin-top: 20px; font-weight: bold; text-shadow: 0 0 10px white; }    </style>
+</head>
+<body>
+    <div class="container">
+        <nav><a href="index.html">← Retour</a></nav>
+        <h1>Théorème de Pythagore</h1>
+        <input type="number" id="coteA" placeholder="Côté A" oninput="calculer()">
+        <input type="number" id="coteB" placeholder="Côté B" oninput="calculer()">
+        <div class="resultat" id="affichage">Hypoténuse = ?</div>
+    </div>
+
+    <script>
+        function calculer() {
+            const a = document.getElementById('coteA').value;
+            const b = document.getElementById('coteB').value;
+            if(a > 0 && b > 0) {
+                const c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+                document.getElementById('affichage').innerText = "Hypoténuse = " + c.toFixed(2);
+            }
+        }
+    </script>
+</body>
+</html>
